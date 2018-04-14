@@ -1,1 +1,0 @@
-This is a simple React site to display the 2018 conference list from [Ryan Burgess](https://github.com/ryanburgess/2018-conferences).
