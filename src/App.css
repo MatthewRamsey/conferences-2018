@@ -1,0 +1,16 @@
+div {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 5px;
+}
+
+a {
+  outline : none;
+  text-decoration: none;
+}
