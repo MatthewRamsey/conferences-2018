@@ -3,6 +3,7 @@ div {
 }
 
 h1 {
+  margin-top: 0px;
   color: white;
 }
 
@@ -11,7 +12,7 @@ ul {
 }
 
 li {
-  margin: 5px;
+  margin-bottom: 15px;
 }
 
 a {
@@ -23,7 +24,12 @@ a {
   background-color: black;
 }
 
+#cardContainer {
+  text-align: center;
+}
+
 #icon {
   height: 30px;
   width: 30px;
+  padding-top: 5px;
 }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 import CircularProgress from 'material-ui/CircularProgress';
-import { List, ListItem } from 'material-ui/List';
 import sortJsonArray from 'sort-json-array';
+import githubIcon from './img/Github.png';
 
 class App extends Component {
 
@@ -35,28 +35,32 @@ class App extends Component {
 
     return (
       <div id='container'>
-        <h1>2018 Conference List</h1>
-        <ul>
-          {this.state.conferences.map(item => {
-            let dates = item.date ? <div>Dates: {item.dateFrom} - {item.dateTo}</div> : <div>Date: {item.dateFrom}</div>;
-            return (
-              <a href={item.url}>
-                <li>
-                  <Card>
-                    <CardTitle>
-                      <h2><img id='icon' src={item.url + '/favicon.png'} /> {item.title}</h2>
-                    </CardTitle>
-                    <hr />
-                    <CardText>
-                      <h4>{dates}</h4>
-                    <h4>Location: {item.where}</h4>
-                    </CardText>
-                  </Card>
-                </li>
-              </a>
-            )
-          })}
-        </ul>
+        <div>
+        <a href="https://github.com/MatthewRamsey/conferences-2018"><h1>2018 Conference List <img id="icon" src={githubIcon} /></h1></a>
+        </div>
+        <div id='cardContainer'>
+          <ul>
+            {this.state.conferences.map(item => {
+              let dates = item.dateTo ? <div>Dates: {item.dateFrom} - {item.dateTo}</div> : <div>Date: {item.dateFrom}</div>;
+              return (
+                <a href={item.url}>
+                  <li>
+                    <Card style={{ width: '50%', display: 'inline-block' }}>
+                      <CardTitle>
+                        <h2>{item.title}</h2>
+                      </CardTitle>
+                      <hr />
+                      <CardText>
+                        <h4>{dates}</h4>
+                        <h4>Location: {item.where}</h4>
+                      </CardText>
+                    </Card>
+                  </li>
+                </a>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     )
   }
