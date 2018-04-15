@@ -1,0 +1,29 @@
+div {
+  text-align: center;
+}
+
+h1 {
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 5px;
+}
+
+a {
+  outline : none;
+  text-decoration: none;
+}
+
+#container {
+  background-color: black;
+}
+
+#icon {
+  height: 30px;
+  width: 30px;
+}

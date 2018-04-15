@@ -1,0 +1,24 @@
+{
+  "name": "conferences-2018",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "gh-pages": "^1.1.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-scripts": "1.1.4",
+    "sort-json-array": "^0.1.7",
+    "typeface-roboto": "0.0.54"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -b master -d build"
+  },
+  "devDependencies": {
+    "material-ui": "^0.20.0"
+  },
+  "homepage": "https://matthewramsey.github.io/conferences-2018/"
+}
