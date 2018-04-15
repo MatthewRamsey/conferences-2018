@@ -3,7 +3,7 @@ import './App.css';
 import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
 import CircularProgress from 'material-ui/CircularProgress';
 import { List, ListItem } from 'material-ui/List';
-
+import sortJsonArray from 'sort-json-array';
 
 class App extends Component {
 
@@ -19,23 +19,22 @@ class App extends Component {
     fetch('https://raw.githubusercontent.com/ryanburgess/2018-conferences/master/list.json')
       .then(response => response.json())
       .then(data => {
-        this.setState({ isLoading: false, conferences: data })
+        let sortedDate = sortJsonArray(data, 'dateFrom', 'asc');
+        this.setState({ isLoading: false, conferences: sortedDate })
       })
   }
 
   render() {
     if (this.state.isLoading) {
       return (
-        <div>
+        <div id='container'>
           <CircularProgress size={80} thickness={5} />
         </div>
       )
     }
 
-    
-
     return (
-      <div>
+      <div id='container'>
         <h1>2018 Conference List</h1>
         <ul>
           {this.state.conferences.map(item => {
@@ -44,14 +43,13 @@ class App extends Component {
               <a href={item.url}>
                 <li>
                   <Card>
-                    <CardHeader>
-                      {item.title}
-                    </CardHeader>
+                    <CardTitle>
+                      <h2><img id='icon' src={item.url + '/favicon.png'} /> {item.title}</h2>
+                    </CardTitle>
+                    <hr />
                     <CardText>
-                      {dates}
-                    </CardText>
-                    <CardText>
-                      Location: {item.where}
+                      <h4>{dates}</h4>
+                    <h4>Location: {item.where}</h4>
                     </CardText>
                   </Card>
                 </li>
