@@ -45,7 +45,7 @@ class App extends Component {
               return (
                 <a href={item.url}>
                   <li>
-                    <Card style={{ width: '50%', display: 'inline-block' }}>
+                    <Card style={{ width: '35%', display: 'inline-block' }}>
                       <CardTitle>
                         <h2>{item.title}</h2>
                       </CardTitle>
